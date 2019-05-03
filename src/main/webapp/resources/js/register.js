@@ -1,7 +1,7 @@
 /**
  * 
  */
-    $('form').validate({
+        $('form').validate({
         rules: {
             name: {
                 minlength: 3,
