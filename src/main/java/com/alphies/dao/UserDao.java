@@ -10,6 +10,8 @@ public interface UserDao {
 	
 	public List<Users> checkUser(String uname , String pass);
 	
+	public void add(String uname, String pass, String fname, String lname, boolean qa, boolean dev);
+	
 	public List<Projects> listAllProjects();
 	
 	public List<Projects> getProjects(int qa_id);

@@ -147,6 +147,32 @@ public class UserDaoImpl implements UserDao{
 		
 		System.out.println(result);
 	}
+
+	@SuppressWarnings("unused")
+	public void add(String uname, String pass, String fname, String lname, boolean qa, boolean dev) {
+		
+		SQLQuery query;
+		
+		String sql = "INSERT INTO `users` (`uname`, `pass`, `fname`, `lname`, `qa`, `dev`) VALUES (:uname, :pass, :fname, :lname, :qa, :dev)";
+		
+		query = sessionfactory.getCurrentSession().createSQLQuery(sql);
+		
+		query.setString("uname", uname);
+		
+		query.setString("pass", pass);
+		
+		query.setString("fname", fname);
+		
+		query.setString("lname", lname);
+		
+		query.setBoolean("qa", qa);
+		
+		query.setBoolean("dev", dev);
+		
+		int results = query.executeUpdate();
+	}
+	
+	
 	
 	
 }

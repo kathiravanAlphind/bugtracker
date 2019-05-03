@@ -52,7 +52,7 @@
 							<div class="form-group">
 								<input type="submit" value="Login"
 									class="btn float-right login_btn">
-								<!-- <button class="btn float-left login_btn"><a href="register.jsp">Register</a></button> -->
+								<button class="btn float-left login_btn"><a href="register.jsp">Register</a></button>
 							</div>
 						</div>
 					</div>
