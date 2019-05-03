@@ -14,6 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<form action="add" method="post">
 <div id="contentContainer" class="container">
   <div class="row">
     <div id="realContent" class="col-xs-12">
@@ -96,6 +97,7 @@
   </div>
   <!-- /.row -->
 </div>
+</form>
 <!-- /#contentContainer -->
 </body>
 </html>
