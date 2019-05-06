@@ -40,19 +40,18 @@
 									<span class="input-group-text"><i class="fas fa-user"></i></span>
 								</div>
 								<input type="text" class="form-control" name="uname"
-									placeholder="username">
+									placeholder="username" required="required">
 							</div>
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-key"></i></span>
 								</div>
 								<input type="password" class="form-control" name="pass"
-									placeholder="password">
+									placeholder="password" required="required">
 							</div>
 							<div class="form-group">
-								<input type="submit" value="Login"
-									class="btn float-right login_btn">
-								<a href="register.jsp">Register</a>
+								<button class="btn btn-primary float-right" type="submit">Log in</button>
+								<a class="btn btn-primary float-left" href="register.jsp" role="button">Sign Up</a>
 							</div>
 						</div>
 					</div>

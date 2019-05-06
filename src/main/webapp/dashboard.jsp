@@ -13,8 +13,14 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans"
 	rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resources/css/welcome.css"/>">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<aside class="side-nav" id="show-side-navigation1">
@@ -32,7 +38,7 @@
 				<ul class="side-nav-dropdown">
 					<li><a href="#">COE, Development centre NSIC STP Complex,
 							Module no 409, Ekkaduthangal, Guindy I.E., Chennai - 600 032,
-							Tamil Nadu. Tel:+91 44 4214 8468 Email: support@alphind.com</a></li>
+							Tamil Nadu. Tel:+91 44 4214 8468 Email: support@alphind.com</li>
 				</ul></li>
 		</ul>
 	</aside>
@@ -45,7 +51,7 @@
 						aria-expanded="false">
 						<i class="fa fa-align-right"></i>
 					</button>
-					<a class="navbar-brand" href="#">my<span class="main-color">Dashboard</span></a>
+					<a class="navbar-brand">my<span class="main-color">Dashboard</span></a>
 				</div>
 				<div class="collapse navbar-collapse navbar-right"
 					id="bs-example-navbar-collapse-1">
@@ -86,9 +92,53 @@
 			<div class="container">
 				<h2>Projects</h2>
 				<c:forEach items="${ProjectList }" var="project">
-					<div class="list-group">
-						<a href="/SupportTicketSystem/${project.id}"
-							class="list-group-item">${project.pname }</a>
+					<div class="w3-show-inline-block">
+						<div class="w3-bar">
+							<button type="button" class="btn btn-info btn-lg"
+								data-toggle="modal" data-target="#myModal">${project.pname }</button>
+							&nbsp;&nbsp;&nbsp;
+							<div class="modal fade" id="myModal" role="dialog">
+								<div class="modal-dialog">
+
+									<!-- Modal content-->
+									<div class="modal-content" style="background-color: black;">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Create Ticket</h4>
+										</div>
+										<div class="modal-body">
+											<form action="create" method="post">
+												<div class="form-group">
+													<label for="formGroupExampleInput">Title</label> <input
+														type="text" class="form-control"
+														id="formGroupExampleInput" placeholder="Title"
+														name="title">
+												</div>
+												<div class="form-group">
+													<label for="formGroupExampleInput2">Category</label> <input
+														type="text" class="form-control"
+														id="formGroupExampleInput2" placeholder="Category"
+														name="category">
+												</div>
+
+												<div class="form-group">
+													<label for="formGroupExampleInput">Description</label>
+													<textarea class="form-control" id="formGroupExampleInput"
+														placeholder="Description" name="description"></textarea>
+												</div>
+												<div class="form-group">
+													<button class="btn btn-primary">Create</button>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</c:forEach>
 			</div>
