@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void createUpdateTicket(int id, int submitted_by, int project_id, String number, String title,
-			String category, String description, String status) {
+			String category, String description, String status, String date) {
 		// TODO Auto-generated method stub
-		 userdao.createUpdateTicket(id, submitted_by, project_id, number, title, category, description, status);
+		 userdao.createUpdateTicket(id, submitted_by, project_id, number, title, category, description, status, date);
 	}
 
 	public void add(String uname, String pass, String fname, String lname, boolean qa, boolean dev) {

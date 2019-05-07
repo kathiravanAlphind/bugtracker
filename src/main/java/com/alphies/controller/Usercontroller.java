@@ -1,6 +1,7 @@
 package com.alphies.controller;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +44,7 @@ public class Usercontroller {
 		
 		List<Users> users = userService.checkUser(uname, pass);
 				
-		if(users!= null && users.size() > 0 && users.get(0).isQuality_assurance() == true)
+		if(users!= null  && users.get(0).isQuality_assurance() == true)
 		{
 			session.setAttribute("userID", users.get(0).getId());
 			System.out.println(users.get(0).getId());
@@ -101,7 +102,6 @@ public class Usercontroller {
 	{
 		
 		int user_id = (Integer) session.getAttribute("userID");
-		System.out.println(user_id);
 		
 		int id = 0;
 		
@@ -114,8 +114,10 @@ public class Usercontroller {
 		String description = request.getParameter("description");
 		
 		String status = "submitted";
+		
+		String date = LocalDate.now().toString();
 
-		userService.createUpdateTicket(id, user_id, (Integer) session.getAttribute("project"), number, title, category , description, status);
+		userService.createUpdateTicket(id, user_id, (Integer) session.getAttribute("project"), number, title, category , description, status, date);
 		
 		model.setViewName("redirect:/dashboard");
 		

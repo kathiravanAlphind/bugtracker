@@ -1,5 +1,6 @@
 package com.alphies.dao;
 
+
 import java.util.List;
 
 import com.alphies.model.Projects;
@@ -18,6 +19,6 @@ public interface UserDao {
 	
 	public List<Tickets> getTickets(int user_id);
 	
-	public void createUpdateTicket(int id, int submitted_by,int project_id, String number, String title, String category,String description,String status);
+	public void createUpdateTicket(int id, int submitted_by,int project_id, String number, String title, String category,String description,String status,String date);
 
 }

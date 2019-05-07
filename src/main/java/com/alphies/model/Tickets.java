@@ -1,5 +1,7 @@
 package com.alphies.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +37,17 @@ public class Tickets {
 	
 	@Column
 	private String status;
+	
+	@Column
+	private Date date;
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
 	public int getId() {
 		return id;

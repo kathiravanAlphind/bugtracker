@@ -1,5 +1,8 @@
 package com.alphies.dao;
 
+
+
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,7 +88,7 @@ public class UserDaoImpl implements UserDao{
 
 		SQLQuery query;
 
-		String sql = "select tickets.id, submitted_by, project_id, number, category, description, status from tickets inner join users on users.id = tickets.submitted_by where submitted_by = :id";
+		String sql = "select tickets.id, submitted_by, project_id, number, category, description, status, date from tickets inner join users on users.id = tickets.submitted_by where submitted_by = :id";
 
 		query = sessionfactory.getCurrentSession().createSQLQuery(sql);
 
@@ -114,6 +117,7 @@ public class UserDaoImpl implements UserDao{
 				ticket.setCategory((String) row[4]);
 				ticket.setDescription((String)row[5]);
 				ticket.setStatus((String) row[6]);
+				ticket.setDate((Date) row[7]);
 
 				tickets.add(ticket);
 				idList.add(tid);
@@ -122,25 +126,24 @@ public class UserDaoImpl implements UserDao{
 		return tickets;
 	}
 
-	public void createUpdateTicket(int id, int submitted_by, int project_id, String number, String title, String category, String description, String status) {
+	public void createUpdateTicket(int id, int submitted_by, int project_id, String number, String title, String category, String description, String status, String date) {
 		
 
 		//String sql = "call sp_iu_tickets(:id, :submitted_by, :project_id, :number, :title, :category, :description, :status)";
 
 		//query = sessionfactory.getCurrentSession().createSQLQuery(sql);
 		
-		Query query = sessionfactory.getCurrentSession().createSQLQuery("CALL sp_iu_tickets(:id, :submitted_by, :project_id, :number, :title, :category, :description, :status)");//.addEntity(Tickets.class);
+		Query query = sessionfactory.getCurrentSession().createSQLQuery("CALL sp_iu_tickets(:id, :submitted_by, :project_id, :number, :title, :category, :description, :status, :date)");//.addEntity(Tickets.class);
 		
 		query.setInteger("id", id);
 		query.setInteger("submitted_by", submitted_by);
 		query.setInteger("project_id", project_id);
-		
 		query.setString("number", number);
-		
 		query.setString("title", title);
 		query.setString("category", category);
 		query.setString("description", description);
 		query.setString("status", status);
+		query.setString("date", date);
 		
 		int result = query.executeUpdate();
 		
