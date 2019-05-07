@@ -28,8 +28,6 @@ public class Usercontroller {
 	
 	private List<Projects> listProject;
 	
-	Tickets t = new Tickets();
-	
 	public Usercontroller() {
 		System.out.println("user");
 	}
@@ -71,7 +69,10 @@ public class Usercontroller {
 		
 		this.listProject = userService.getProjects(qa_id);
 		
-		System.out.println(listProject.get(0).getPname());
+		if(this.listProject == null)
+		{
+			model.setViewName("dashboard.jsp");
+		}
 		
 		List<Tickets> listTickets;
 		
