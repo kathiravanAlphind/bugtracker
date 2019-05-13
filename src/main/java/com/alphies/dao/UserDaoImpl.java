@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao{
 
 		SQLQuery query;
 
-		String sql = "select projects.id, projects.pname from projects inner join users on users.id = projects.tl_id where projects.tl_id = :tlid";
+		String sql = "select projects.id, projects.pname, projects.tl_id from projects inner join users on users.id = projects.tl_id where projects.tl_id = :tlid";
 
 		query = sessionfactory.getCurrentSession().createSQLQuery(sql);
 
@@ -74,6 +74,7 @@ public class UserDaoImpl implements UserDao{
 
 				project.setId(pid);
 				project.setPname((String)row[1]);
+				project.setTl_id((Integer) row[2]);
 
 				projects.add(project);
 				pList.add(pid);

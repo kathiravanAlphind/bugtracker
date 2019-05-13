@@ -63,7 +63,7 @@ public class Usercontroller {
 	public ModelAndView listProjects(HttpServletRequest request, ModelAndView model, HttpServletResponse response, HttpSession session)
 	{
 		int qa_id = (Integer) session.getAttribute("userID");
-		System.out.println(qa_id);
+		System.out.println("myid"+qa_id);
 		
 		String name = (String) session.getAttribute("username");
 		
