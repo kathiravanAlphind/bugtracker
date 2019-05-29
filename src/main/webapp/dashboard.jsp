@@ -32,7 +32,8 @@
 			</div>
 		</div>
 		<ul class="categories">
-			<li><i class="fa fa-envelope fa-fw"></i><a href="#"> Contact us</a>
+			<li><i class="fa fa-envelope fa-fw"></i><a href="#"> Contact
+					us</a>
 				<ul class="side-nav-dropdown">
 					<li><a href="#">COE, Development centre NSIC STP Complex,
 							Module no 409, Ekkaduthangal, Guindy I.E., Chennai - 600 032,
@@ -92,6 +93,11 @@
 				<h2>Projects</h2>
 				<c:forEach items="${ProjectList }" var="project">
 					<div class="list-group">
+
+						<%
+							out.println(request.getSession().getAttribute("userID"));
+								out.println(request.getSession().getAttribute("username"));
+						%>
 						<a href="/SupportTicketSystem/${project.id}"
 							class="list-group-item">${project.pname }</a>
 					</div>

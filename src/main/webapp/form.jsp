@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<% out.println(request.getSession().getAttribute("project"));%>
 <form action="create" method="post">
   <div class="form-group">
     <label for="formGroupExampleInput">Title</label>
