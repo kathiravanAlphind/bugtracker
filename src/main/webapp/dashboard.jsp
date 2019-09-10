@@ -94,10 +94,10 @@
 				<c:forEach items="${ProjectList }" var="project">
 					<div class="list-group">
 
-						<%
+						<%-- <%
 							out.println(request.getSession().getAttribute("userID"));
 								out.println(request.getSession().getAttribute("username"));
-						%>
+						%> --%>
 						<a href="/SupportTicketSystem/${project.id}"
 							class="list-group-item">${project.pname }</a>
 					</div>
