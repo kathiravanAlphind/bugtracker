@@ -57,6 +57,7 @@ CREATE TABLE `tickets` (
 `category` VARCHAR(255) NOT NULL,
 `description` VARCHAR(255) NOT NULL,
 `status` VARCHAR(255) NOT NULL,
+`date` DATE NOT NULL,
 PRIMARY KEY (`id`)
 );
 
